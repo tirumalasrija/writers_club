@@ -1,0 +1,31 @@
+
+
+.btn-custom {
+    height: 40px;
+    border-radius: 20px;
+    width: 200px;
+    background-color: #F6C14C;
+    color: #fff;
+}
+
+.field-icon {
+    float: right;
+    margin-right: 8px;
+    margin-top: -23px;
+    position: relative;
+    z-index: 2;
+    font-size: 11px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 15px;
+}
+
+span.login a {color:#F6C14C;}
+
+.logo img {
+    width: 80px;
+    margin-top: 70px;
+
+}
