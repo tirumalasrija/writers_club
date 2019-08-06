@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@media(max-width:768px){
+
+    .continer-fluid > .d-flex.justify-content-around.bd-highlight.mb-3 {
+        justify-content: initial!important;
+        flex-direction: column;
+    }
+
+    .logo img {
+        margin-top: 30px;
+    
+    }
+    
+}
+
+
+
