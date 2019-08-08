@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #A9D7E1 !important;
+}
 @media(max-width:768px){
 
     .continer-fluid > .d-flex.justify-content-around.bd-highlight.mb-3 {
