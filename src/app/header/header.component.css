@@ -27,6 +27,8 @@ ul.navbar-nav {
     display: table-cell; 
     position: relative; 
     padding: 15px 0;
+    text-align: center;
+
   }
   a.nav-link {
     color: #fff;
