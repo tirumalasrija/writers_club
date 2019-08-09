@@ -13,6 +13,10 @@ body {
         margin-top: 30px;
     
     }
+
+    nav.ml-4.mr-4 {
+        margin: initial !important;
+    }
     
 }
 
