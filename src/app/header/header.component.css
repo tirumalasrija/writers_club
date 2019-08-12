@@ -63,8 +63,9 @@ ul.navbar-nav {
 }
 a.login {
     color: #F6C14C;
-    padding: 12px 45px;
+    padding: 10px 32px;
     transition: all 0.5s ease;
+    border-radius: 20px;
 }
 li.login_one {
     margin: 0 10px;
@@ -76,16 +77,7 @@ a.login:hover {
     border-radius: 40px;
     text-decoration: none;
     background-repeat: repeat-y;
-    /* Safari 4-5, Chrome 1-9 */
-    background: -webkit-gradient(linear, left top, right top, from(#F6C141), to(#F5A623));
-    /* Safari 5.1, Chrome 10+ */
-    background: -webkit-linear-gradient(left, #F5A623, #F6C141);
-    /* Firefox 3.6+ */
-    background: -moz-linear-gradient(left, #F5A623, #F6C141);
-    /* IE 10 */
-    background: -ms-linear-gradient(left, #F5A623, #F6C141);
-    /* Opera 11.10+ */
-    background: -o-linear-gradient(left, #F5A623, #F6C141);
+   
 }
 
 a.login.active {
@@ -94,16 +86,60 @@ a.login.active {
     border-radius: 40px;
     text-decoration: none;
     background-repeat: repeat-y;
-    /* Safari 4-5, Chrome 1-9 */
-    background: -webkit-gradient(linear, left top, right top, from(#F6C141), to(#F5A623));
-    /* Safari 5.1, Chrome 10+ */
-    background: -webkit-linear-gradient(left, #F5A623, #F6C141);
-    /* Firefox 3.6+ */
-    background: -moz-linear-gradient(left, #F5A623, #F6C141);
-    /* IE 10 */
-    background: -ms-linear-gradient(left, #F5A623, #F6C141);
-    /* Opera 11.10+ */
-    background: -o-linear-gradient(left, #F5A623, #F6C141);
+   
 }
 .navbar-dark .navbar-toggler {background-color: #F5A623;}
 
+.bg-orange {
+  background-color: #F6C141!important;
+}
+
+nav.bg-orange a.nav-link:after {    
+  background: #fff;
+  top: -29px;
+}
+
+.bg-orange .navbar-nav .nav-link {
+  color:#fff;
+  
+}
+.bg-orange a.login {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.bg-orange a.login:hover {
+  color: #F6C141;
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+a.login img {
+  width: 50px;
+  height: 50px;
+}
+
+.user_pic a {
+border: 0px solid;
+}
+
+.user_pic img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.ellipsis-v-icon i {
+  font-size: 25px;
+  color: #fff;
+} 
+
+.user_pic {
+  padding: 0 20px 0 15px;
+}
+
+
+
+.ellipsis-v-icon {
+  position: relative;
+}

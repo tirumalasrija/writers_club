@@ -17,6 +17,11 @@ body {
     nav.ml-4.mr-4 {
         margin: initial !important;
     }
+
+    a.login {
+        padding: 10px 20px!important;
+    }
+
     
 }
 
