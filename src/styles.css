@@ -2,6 +2,7 @@
 body {
     background-color: #A9D7E1 !important;
 }
+
 @media(max-width:768px){
 
     .continer-fluid > .d-flex.justify-content-around.bd-highlight.mb-3 {
@@ -24,6 +25,13 @@ body {
 
     
 }
+
+@media (min-width: 1360px) {
+    .container {
+        max-width: 1300px!important;
+    }
+}
+
 
 
 
