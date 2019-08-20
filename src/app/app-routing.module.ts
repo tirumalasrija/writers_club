@@ -4,6 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { StoryComponent } from './story/story.component';
+import { ShareStoryComponent } from './share-story/share-story.component';
 
 const routes: Routes = [
 
@@ -15,6 +16,11 @@ const routes: Routes = [
   {
     path: 'story', component: StoryComponent,
   
+},
+
+{
+  path: 'share-story', component: ShareStoryComponent,
+
 },
   {
     path: 'login', component: LoginComponent,
