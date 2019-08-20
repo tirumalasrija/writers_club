@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { StoryComponent } from './story/story.component';
+import { ShareStoryComponent } from './share-story/share-story.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StoryComponent } from './story/story.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    StoryComponent  ],
+    StoryComponent,
+    ShareStoryComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule

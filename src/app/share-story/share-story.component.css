@@ -1,0 +1,129 @@
+.share_story_container {
+  width: 88%;
+}
+.share_story_container .share_story {
+    font-size: 26px;
+  
+  }
+
+ .share_story_container .divselect {
+    width: 324px;
+    min-height: 74px;
+}
+.share_story_container  .img1 {
+  width: 55px;
+  height: 47px;
+
+}
+
+.share_story_container  .circlebg {
+  width: 74px;
+  height: 74px;
+  background-color: #f1f3f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.share_story_container  .img_align {
+  left: -30px;
+  top: 0px;
+}
+
+.share_story_container  .circlebg .circle {
+  background-color: #eca837;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 44px;
+}
+.share_story_container  .newgroup {
+line-height: 37px;
+font-weight: 700;
+font-size: 18px;
+margin-left: 45px;
+
+}
+
+
+
+  .share_story_container  img.circleimg{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+
+
+    .share_story_container .friends {
+   
+      top: 0px;
+      width: 94%;
+    }
+
+    .share {
+      color: #fff;
+      background-color: #F6C14C;
+      border-radius: 40px;
+      text-decoration: none;
+      background-repeat: repeat-y;
+      border: 0px;
+      outline: 0px;
+      width: 251px;
+  }
+  .share:hover {
+      color: #F6C14C;
+      background-color: #fff;
+     
+  }
+
+  .invite {
+    color: #F6C14C;
+    background-color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    background-repeat: repeat-y;
+    border: 0px;
+    outline: 0px;
+    padding: 8px 0px;
+    width: 251px;
+    margin-left: -30px;
+}
+.invite:hover {
+    color: #fff;
+    background-color: #F6C14C;
+   
+}
+.twomore {
+  font-size:12px;
+  padding-top: 38px;
+  cursor: pointer;
+}
+
+.live__scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 180px;
+  float: right;
+}
+
+.live__scroll--box {
+  display: inline-block;
+  float: none;
+}
+
+.tution_mate {
+  width: 210px;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  background-color: #2b4368;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+  color: #fff;
+  background-color: #2b4368;
+}
