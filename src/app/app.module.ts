@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { StoryComponent } from './story/story.component';
 import { ShareStoryComponent } from './share-story/share-story.component';
+import { StoryFeedSummaryComponent } from './story-feed-summary/story-feed-summary.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ShareStoryComponent } from './share-story/share-story.component';
     HeaderComponent,
     FooterComponent,
     StoryComponent,
-    ShareStoryComponent  ],
+    ShareStoryComponent,
+    StoryFeedSummaryComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule
