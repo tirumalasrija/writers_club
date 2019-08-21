@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { StoryComponent } from './story/story.component';
 import { ShareStoryComponent } from './share-story/share-story.component';
+import { StoryFeedSummaryComponent } from './story-feed-summary/story-feed-summary.component';
 
 const routes: Routes = [
 
@@ -22,6 +23,12 @@ const routes: Routes = [
   path: 'share-story', component: ShareStoryComponent,
 
 },
+
+{
+  path: 'story-feed-summary', component: StoryFeedSummaryComponent,
+
+},
+
   {
     path: 'login', component: LoginComponent,
   
