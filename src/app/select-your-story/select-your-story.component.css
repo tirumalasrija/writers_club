@@ -1,0 +1,42 @@
+.share_story_container {
+    width: 88%;
+}
+ .share_story {
+      font-size: 26px;
+}
+
+
+.Slect_bg_container {
+   bottom: 0px;
+}
+
+.Slect_bg_container .comic {
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #2b4368;
+  }
+  
+  .custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    background-color: #2b4368;
+  }
+
+  .continue {
+    color: #fff;
+    background-color: #F6C14C;
+    border-radius: 40px;
+    text-decoration: none;
+    border: 0px;
+    outline: 0px;
+    padding: 0px 50px;
+    height: 44px;
+  }
+  .continue:hover {
+    color: #F6C14C;
+    background-color: #fff;
+   
+  }
