@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { StoryComponent } from './story/story.component';
 import { ShareStoryComponent } from './share-story/share-story.component';
 import { StoryFeedSummaryComponent } from './story-feed-summary/story-feed-summary.component';
+import { SelectYourStoryComponent } from './select-your-story/select-your-story.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { StoryFeedSummaryComponent } from './story-feed-summary/story-feed-summa
     FooterComponent,
     StoryComponent,
     ShareStoryComponent,
-    StoryFeedSummaryComponent  ],
+    StoryFeedSummaryComponent,
+    SelectYourStoryComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule
