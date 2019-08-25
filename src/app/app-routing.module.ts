@@ -7,6 +7,8 @@ import { StoryComponent } from './story/story.component';
 import { ShareStoryComponent } from './share-story/share-story.component';
 import { StoryFeedSummaryComponent } from './story-feed-summary/story-feed-summary.component';
 import { SelectYourStoryComponent } from './select-your-story/select-your-story.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { MyGroupsComponent } from './my-groups/my-groups.component';
 
 const routes: Routes = [
 
@@ -34,6 +36,17 @@ const routes: Routes = [
   path: 'select-your-story', component: SelectYourStoryComponent,
 
 },
+
+{
+  path: 'my-profile', component: MyProfileComponent,
+
+},
+
+{
+  path: 'my-groups', component: MyGroupsComponent,
+
+},
+
 
   {
     path: 'login', component: LoginComponent,

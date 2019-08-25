@@ -16,6 +16,8 @@ import { StoryComponent } from './story/story.component';
 import { ShareStoryComponent } from './share-story/share-story.component';
 import { StoryFeedSummaryComponent } from './story-feed-summary/story-feed-summary.component';
 import { SelectYourStoryComponent } from './select-your-story/select-your-story.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { MyGroupsComponent } from './my-groups/my-groups.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SelectYourStoryComponent } from './select-your-story/select-your-story.
     StoryComponent,
     ShareStoryComponent,
     StoryFeedSummaryComponent,
-    SelectYourStoryComponent  ],
+    SelectYourStoryComponent,
+    MyProfileComponent,
+    MyGroupsComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule
