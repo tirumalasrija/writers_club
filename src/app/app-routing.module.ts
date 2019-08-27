@@ -9,6 +9,7 @@ import { StoryFeedSummaryComponent } from './story-feed-summary/story-feed-summa
 import { SelectYourStoryComponent } from './select-your-story/select-your-story.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { MyGroupsComponent } from './my-groups/my-groups.component';
+import { StoryEditorComponent } from './story-editor/story-editor.component';
 
 const routes: Routes = [
 
@@ -47,8 +48,12 @@ const routes: Routes = [
 
 },
 
+{
+  path: 'story-editor', component: StoryEditorComponent,
 
-  {
+},
+
+{
     path: 'login', component: LoginComponent,
   
 },
