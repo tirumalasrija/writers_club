@@ -1,8 +1,7 @@
 <div class="my-custom-class">
     <div class="container-fluid p-0">
         <div class="d-flex">
-            <div class="col-lg-5 p-0 bg-white h-100">
-               
+            <div class="col-lg-4 p-0 bg-white h-100">     
                 <ul class="nav nav-tabs story_editor" role="tablist">
                     <ul class="d-flex justify-content-between story_container w-100">
                             <li>Story Editot</li>
@@ -41,12 +40,40 @@
                             </div>
                         </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="buzz">bbb</div>
+                    <div role="tabpanel" class="tab-pane fade" id="buzz">
+                        <ul class="images_container">
+                            <li><input type="checkbox" id="cb1" checked/>
+                              <label for="cb1"><img src="/assets/select_story_bg.jpg"  class="img-fluid"/></label>
+                            </li>
+                            <li><input type="checkbox" id="cb2" />
+                              <label for="cb2"><img src="/assets/select_story_bg.jpg"  class="img-fluid"/></label>
+                            </li>
+                            <li><input type="checkbox" id="cb3" />
+                              <label for="cb3"><img src="/assets/select_story_bg.jpg"  class="img-fluid"/></label>
+                            </li>
+                            <li><input type="checkbox" id="cb4" />
+                              <label for="cb4"><img src="/assets/select_story_bg.jpg"  class="img-fluid"/></label>
+                            </li>
+                          </ul>
+                    </div>
                     <div role="tabpanel" class="tab-pane fade" id="references">ccc</div>
                 </div>
 
             </div>
-            <div class="col-lg-7">222222</div>
+            <div class="col-lg-7">
+                <div class="d-flex mt-3 rightside_con">
+                    <div class="friend">Fiona and Friend</div>
+                    <div><img src="/assets/summary_bg.jpg"  class="img-fluid"/></div>
+                    <div class="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <br/> <br/>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+<div class="bg-white p-4 w-100 shadow mt-4 d-flex justify-content-end button_con">
+    <button type="button" class="btn cancel">Cancel</button>
+    <button type="button" class="btn draft">Save as Draft</button>
+    <button type="button" class="btn publish">Publish</button>
+
 </div>
