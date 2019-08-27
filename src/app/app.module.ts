@@ -18,6 +18,7 @@ import { StoryFeedSummaryComponent } from './story-feed-summary/story-feed-summa
 import { SelectYourStoryComponent } from './select-your-story/select-your-story.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { MyGroupsComponent } from './my-groups/my-groups.component';
+import { StoryEditorComponent } from './story-editor/story-editor.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MyGroupsComponent } from './my-groups/my-groups.component';
     StoryFeedSummaryComponent,
     SelectYourStoryComponent,
     MyProfileComponent,
-    MyGroupsComponent  ],
+    MyGroupsComponent,
+    StoryEditorComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule
