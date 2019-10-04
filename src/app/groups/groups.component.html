@@ -1,0 +1,176 @@
+<!-- <div class="container">
+<div class="row">
+    <div class="col-md-6">
+   
+        <form [formGroup]="sendEmailForm" (ngSubmit)="send(sendEmailForm.value)">
+<h2>Invite New Members</h2>
+<label>Email Address</label>
+            <input class="form-control" matInput formControlName="toAddress">  
+
+          <button [disabled]="!sendEmailForm.valid"> Invite Now</button>
+        </form>
+        &nbsp; &nbsp;
+        <h3>Your Members</h3>
+        <div *ngIf="loading else loaded">
+                loading ...
+              </div>
+        <h5 #loaded *ngFor="let obj of listemails" >{{obj.email_id}} <i class="fa fa-times" (click)="removeMember(obj.id)" aria-hidden="true"></i></h5>
+    </div>
+    <div class="col-md-6">
+   
+            <form [formGroup]="createGroup" (ngSubmit)="create()">
+    <h2>Create Group</h2>
+    <label>Group Name</label>
+                <input class="form-control" matInput formControlName="name">  
+               <label>Select Group Members</label>
+                <select formControlName="members" multiple>
+                    <option value="{{obj.id}}" *ngFor="let obj of listemails">{{obj.email_id}}</option>
+                </select>
+                <h2></h2>
+              <button > Create</button>
+            </form>
+            &nbsp; &nbsp;
+            <h3>Your Groups</h3>
+            <div *ngIf="loading else loaded">
+              loading ...
+            </div>
+            <h5  #loaded *ngFor="let obj of allgroups" >{{obj.group_name}} <i class="fa fa-times" (click)="removeGroup(obj.group_id)" aria-hidden="true"></i>
+              <i class="fa fa-share-alt" (click)="sendmailGroup(obj.group_id)" aria-hidden="true"></i>
+            
+            </h5>
+            
+          </div>
+</div>
+</div> -->
+<!-- groups-->
+<div class="my-custom-class">
+	<div class="container-fluid share_story_container">
+        <div class="row">
+	    <div class="d-flex flex-column mb-5 mt-5 col-lg-12 p-0">
+            <div class="share_story">
+                <b class="story_feed"><i class="fas fa-arrow-left"></i>&nbsp;Story Feed</b>
+            </div>
+            <p class="mt-3 pl-4">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
+        </div> 
+        
+        <div class="d-flex flex-row justify-content-between mt-4 col-lg-12">
+
+            <div class="shadow p-3 mb-5 bg-white rounded divselect position-relative"  (click)="openModal()">
+              <div class="position-absolute img_align">
+               <div class="circlebg rounded-circle">
+                    <div class="circle">+</div>
+               </div>
+               </div>
+               <div class="position-absolute newgroup" >Creat New Group</div>
+            </div>
+<!-- loop start-->
+            <div *ngFor="let obj of allgroups" class="shadow p-3 mb-5 bg-white rounded divselect position-relative">
+                <div class="position-absolute img_align">
+                    <div class="circlebg rounded-circle">
+                        <img src="./assets/friends.jpg" class="img1 rounded-circle">
+                        
+                    </div>
+                </div>
+                <div class="position-absolute friends">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="fa fa-times" (click)="removeGroup(obj.group_id)" aria-hidden="true"></i>
+                            <div class="newgroup imglineheight">{{obj.group_name}}d</div>
+                            <div class="d-flex flex-row justify-content-center">
+                                <div><img src="assets/icon.png" class="circleimg rounded-circle"></div>
+                                <div><img src="assets/icon.png" class="circleimg rounded-circle"></div>
+                                <div><img src="assets/icon.png" class="circleimg rounded-circle"></div>
+                            </div>
+                        </div> 
+                        <div>
+                             <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                                <label class="custom-control-label" for="customCheck">&nbsp;</label>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+          
+            </div>
+            <div class="d-flex justify-content-between col-lg-12 mt-5">
+                    <button type="button" class="btn btn-secondary invite" (click)="openModal1()">Invite New Member</button>
+                    <button type="button" class="btn btn-secondary share">Share</button>
+            </div>
+
+        
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal"  [ngStyle]="{'display':display}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Create New Group</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="onCloseHandled()">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <alert></alert>
+        <form [formGroup]="createGroup" (ngSubmit)="create()">
+        
+          <label>Group Name</label>
+                      <input class="form-control" matInput formControlName="name">  
+                     <label>Select Group Members</label>
+                      <select formControlName="members" multiple>
+                          <option value="{{obj.id}}" *ngFor="let obj of listemails">{{obj.email_id}}</option>
+                      </select>
+                      <h2></h2>
+                    <button  class="closee btn btn-danger" > Create</button>
+                  </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="closee btn btn-danger" (click)="onCloseHandled()">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div class="modal" id="myModal1"  [ngStyle]="{'display':display1}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Invite New Members</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="onCloseHandled()">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <alert></alert>
+        <form [formGroup]="sendEmailForm" (ngSubmit)="send(sendEmailForm.value)">
+        
+          <label>Email Address</label>
+                      <input class="form-control" matInput formControlName="toAddress">  
+          
+                    <button class=" btn btn-danger" [disabled]="!sendEmailForm.valid"> Invite Now</button>
+                  </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class=" btn btn-danger" (click)="onCloseHandled()">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

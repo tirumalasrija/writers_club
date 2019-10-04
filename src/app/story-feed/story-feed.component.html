@@ -1,0 +1,88 @@
+<!--
+
+
+              <div *ngIf="loading else loaded">
+              loading ...
+            </div>
+        
+            <div *ngFor="let obj of allstories" class="card mb-4" #loaded>
+              <img class="card-img-top" src="{{obj.story_path}}" alt="Card image cap">
+              <div class="card-body">
+                <h2 class="card-title">{{obj.story_title}}</h2>
+                <p class="card-text">{{obj.story_content}}</p>
+                <a [routerLink]="['/story', obj.story_id]" class="btn btn-primary">Read </a>
+              </div>
+              <div class="card-footer text-muted">
+                Posted on January 1, 2017 by
+               
+              </div>
+            </div>
+          </div>
+-->
+
+
+<!-- story feed-->
+<div class="my-custom-class">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-5 mt-5">
+      <div class="flex-grow-1 story_feed"><b>Story Feed</b></div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="mr-3">Sort By:</div>
+        <div class="dropdown mr-3">
+          <button class="btn customdd dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Latest
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+
+        <div class="dropdown ml-auto">
+          <button class="btn customdd dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Categories
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="d-flex flex-wrap flex-row">
+        <div *ngIf="loading else loaded">
+            loading ...
+          </div>
+        <div *ngFor="let obj of allstories" class="position-relative imgs" #loaded>
+            <img src="{{obj.story_path}}" class="bordercolor1">
+            <div class="img-content img-content-center shadow">
+              <h5><b>{{obj.story_title}}</b></h5>
+              <p>{{obj.story_content | slice:0:100}}</p>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <div class="user-pic"><img src="{{obj.profile_path}}"></div>
+                  <div class="user_name">
+                    <p>{{obj.name}}</p>
+                    <p class="auther">Auther</p>
+                  </div>
+                </div>
+                <div class="read"><a [routerLink]="['/story', obj.story_id]" >Read more &nbsp;<i class="fas fa-chevron-right"></i></a></div>
+              </div>
+            </div>
+            <div class="social_icons d-flex">
+              <div class="heart"><i class="fas fa-heart"></i> 0 likes</div>
+              
+              <div class="share"><i class="fas fa-share-alt"></i></div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>

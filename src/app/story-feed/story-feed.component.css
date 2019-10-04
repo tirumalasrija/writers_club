@@ -1,0 +1,146 @@
+
+      .customdd {
+        background-color: #fff;
+        color: #000;
+        border-radius: 24px;
+        border: 1px solid #afabab;
+        outline: none;
+        padding: 7px 15px;
+        min-width: 128px;
+        text-align: left;
+      }
+
+      .img-content {
+        background-color: #fff;
+        min-height:190px;
+      }
+
+    .img-content-center {
+      top: 42px;
+      bottom: 50px;
+      right: 15px;
+      position: absolute;
+      width: 353px;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    img.bordercolor1 {
+      border: 16px solid #77adff;
+    }
+
+    img.bordercolor2 {
+      border: 16px solid #ff778d;
+    }
+
+    img.bordercolor3 {
+      border: 16px solid #decf29;
+    }
+
+    img.bordercolor4 {
+      border: 16px solid #af7cfc;
+    }
+
+.position-relative.imgs {
+    width: 50%;
+    margin-bottom: 40px;
+}
+
+
+.imgs img {
+    width: 61%;
+    border-radius: 10px;
+}
+.user-pic {width: 50px; float: left;}
+.user-pic img {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  float: left;
+}
+
+.social_icons {
+    position: absolute;
+    right: 14px;
+    width: 250px;
+    bottom: 0px;
+    min-height: 34px;
+    padding-left: 27px;
+    padding-top: 5px;
+}
+
+.social_icons .share {
+    float: right;
+    position: absolute;
+    right: 0;
+    background-color: #e9ecef;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 24px;
+    padding-top: 2px;
+    border: 1px solid #c2c0c0;
+}
+
+.social_icons .view {
+  color: gray;
+}
+
+.social_icons .heart {
+  color: red;
+}
+
+.social_icons div {
+  margin: 0 10px 0 0;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown i {
+    font-size: 11px;
+    float: right;
+    padding-top: 6px;
+}
+
+.story_feed {
+  font-size: 26px;
+
+}
+
+.auther {
+  color: gray;
+
+}
+
+.read {
+    display: flex;
+    color: #f5ab28;
+    font-size: 13px;
+    align-items: center;
+    align-content: center;
+}
+
+.read i {
+  font-size: 11px;
+  padding-top: 2px;
+
+}
+
+.user_name {
+  float: left;
+} 
+
+.user_name p {
+    margin-bottom: 4px;
+}
+
+.user_name p:nth-child(2) {
+   font-size: 11px;
+}
+
+a{
+  color: #F6C14C;
+text-decoration: none
+}

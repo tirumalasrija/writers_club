@@ -96,8 +96,6 @@
 
 }
 
-
-
 .white_button {
     color: #F6C14C;
     background-color: #fff;
@@ -109,12 +107,13 @@
     padding: 8px 0px;
     width: 251px;
 }
-
 .white_button:hover {
     color: #fff;
     background-color: #F6C14C;
    
 }
+
+
 .today_pic_book_con{
     background-image:url('/assets/pic_big_bg.jpg');
     width: 100%;

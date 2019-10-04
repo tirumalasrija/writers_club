@@ -1,0 +1,61 @@
+.share_story_container {
+    width: 88%;
+  }
+  .share_story_container .share_story {
+      font-size: 26px;
+    
+    }
+
+    .field-icon {
+      float: right;
+      margin-right: 8px;
+      margin-top: -23px;
+      position: relative;
+      z-index: 2;
+      font-size: 11px;
+  }
+  
+  input,
+  input::-webkit-input-placeholder {
+      font-size: 15px;
+  }
+.myprofile label {
+  font-size: 12px;
+}
+  .update {
+    color: #fff;
+    background-color: #F6C14C;
+    border-radius: 40px;
+    text-decoration: none;
+    border: 0px;
+    outline: 0px;
+    padding: 8px 40px;
+    cursor: pointer;
+   
+  }
+  .update:hover {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #bcb9b9;
+   
+  }
+  
+  .cancel {
+    color: #000;
+    background-color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    border: 0px;
+    outline: 0px;
+    padding: 8px 40px;
+    border: 1px solid #bcb9b9;
+    cursor: pointer;
+   
+  }
+  
+  .cancel:hover {
+    color: #fff;
+    background-color: #F6C14C;
+    border: 1px solid #fff;
+   
+  }

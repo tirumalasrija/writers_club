@@ -1,0 +1,39 @@
+
+<div class="my-custom-class">
+	<div class="container-fluid share_story_container">
+        <div class="row">
+            <div class="d-flex flex-column mb-5 mt-5 col-lg-12 p-0">
+                <div class="share_story">
+                    <b class="story_feed"><a href="javascript:void(0)" (click)="backClicked()"><i class="fas fa-arrow-left"></i></a>&nbsp;{{story.story_title}}</b>
+                </div>
+            </div>
+            <div class="d-flex flex-column mb-5 col-lg-8 p-0">
+                <div><img src="{{story.story_path}}" class="rounded"></div>
+                <div class="pt-4">
+                  {{story.story_content}}  </div>
+                <div class="d-flex justify-content-between align-items-center mt-3 mb-5">
+                    <div>
+                      <div class="user-pic"><img src="{{story.profile_path}}" ></div>
+                       <div class="user_name">
+                        <p>{{story.name}}</p>
+                        <p class="auther">Auther</p>
+                      </div>
+                    </div>
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="share"><i class="fas fa-share-alt"></i></div>
+                            <div >Share Stoy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary previous">Previous Story</button>
+                        <button type="button" class="btn btn-secondary next">Next Story</button>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+      
+

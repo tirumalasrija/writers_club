@@ -1,0 +1,89 @@
+
+
+<!-- story feed-->
+<div class="my-custom-class">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center mb-5 mt-5">
+        <div class="flex-grow-1 story_feed"><b>My Stories</b></div>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="mr-3">Sort By:</div>
+          <div class="dropdown mr-3">
+            <button class="btn customdd dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Latest
+
+            </button>
+          
+          </div>
+  
+          <div class="dropdown ml-auto">
+            <button class="btn customdd dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Categories
+           
+            </button>
+           
+          </div>
+        </div>
+      </div>
+  
+     
+      <div class="d-flex flex-wrap flex-row">
+          <div *ngIf="loading else loaded">
+              loading ...
+            </div>
+          <div *ngFor="let obj of allstories" class="position-relative imgs" #loaded>
+              <img src="{{obj.story_path}}" class="bordercolor1">
+              <div class="img-content img-content-center shadow">
+                <h5><b>{{obj.story_title}}</b></h5>
+                <p>{{obj.story_content | slice:0:100}}</p>
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <div class="user-pic"><img src="{{obj.profile_path}}"></div>
+                    <div class="user_name">
+                      <p>{{obj.name}}</p>
+                      <p class="auther">Auther</p>
+                    </div>
+                  </div>
+                  <div class="read"><a [routerLink]="['/story', obj.story_id]" >Read more &nbsp;<i class="fas fa-chevron-right"></i></a></div>
+                </div>
+              </div>
+              <div class="social_icons d-flex">
+                <div class="heart"><i class="fas fa-heart"></i> 12 likes</div>
+                <div class="view"><i class="fas fa-eye"></i> 40 views</div>
+                <div class="share"><i (click)="openModal(obj.story_id)" class="fas fa-share-alt"></i></div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal"  [ngStyle]="{'display':display}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Select Below Groups</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <h5  #loaded *ngFor="let obj of allgroups" >{{obj.group_name}} <i class="fa fa-share-alt" style="font-size:30px;color:red" (click)="sendmailGroup(obj.group_id,event)" aria-hidden="true"></i>
+         
+          
+          </h5>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="onCloseHandled()">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

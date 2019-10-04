@@ -1,22 +1,34 @@
+﻿
+
 <div class="continer-fluid">
     <div class="d-flex justify-content-around bd-highlight mb-3">
       <div class="p-2 bd-highlight"><img src="/assets/kids-registration.svg" class="img-fluid" alt="Italian Trulli"></div>
+     
       <div class="col-lg-5 p-2 bd-highlight">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="d-flex justify-content-center bd-highlight mb-3 logo"><img class="img-fluid" src="/assets/Reg_Bingos_logo.png" alt="Italian Trulli"></div>
         <div class="d-flex flex-column">
           <h4 class="text-center">Welcome Back</h4>
-          <div class="login_google"><a href=""><img src="assets/google_icon.png"/>&nbsp;&nbsp;Login with Google</a></div>
+          <div class="login_google"><a (click)="socialSignIn('google')"><img src="assets/google_icon.png"/>&nbsp;&nbsp;Login with Google</a></div>
           <div class="mt-4 register">
-              <form>
+          
                   <div class="form-group">
                       <label for="inputUserName">User Name</label>
-                      <input type="username" class="form-control" id="inputUserName" placeholder="Enter User Name">
+                    
+                      <input type="email" formControlName="email" class="form-control"placeholder="Enter Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                          <div *ngIf="f.email.errors.required">Username is required</div>
+                      </div>
                   </div>
 
                     <div class="form-group">
                         <label for="inputUserPassword">Password</label>
                         <span class="forgot_password"><a href="#">Forgot Password?</a></span>
-                        <input type="password" class="form-control" id="inputUserPassword" placeholder="Enter User Name">
+                       
+                        <input type="password" formControlName="password" class="form-control" placeholder="Enter Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                        </div>
                         <span class="fa fa-fw fa-eye field-icon toggle-password"></span>
                     </div>
                     <div class="form-check">
@@ -24,14 +36,19 @@
                             <label class="form-check-label" for="exampleCheck1">Remember me</label>
                     </div>
                
-                </form>
+               
           </div>
   
+          
           <div class="d-flex justify-content-center bd-highlight mb-2 mt-2">
-              <button type="button" class="btn btn-custom">Login</button>
+         
+              <button [disabled]="loading" class="btn btn-custom">Login</button>
+              <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+              
           </div>
-            <p class="text-center">Not a member? <span class="login"><a href="#">Register here.</a></span></p>
+            <p class="text-center">Not a member? <span class="login"><a [routerLink]="['/register']" class="btn btn-link">Register Here.</a></span></p>
         </div>
+    </form>
       </div>
       
     </div>

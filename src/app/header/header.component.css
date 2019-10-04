@@ -70,6 +70,7 @@ a.login {
 li.login_one {
     margin: 0 10px;
 }
+.navbar{padding: .5rem 2rem;}
 a.login:hover {
     color: #fff;
     background-color: #F6C14C;
@@ -112,7 +113,11 @@ nav.bg-orange a.nav-link:after {
   background-color: #fff;
   border: 1px solid #fff;
 }
-
+.bg-orange a.login.active {
+  color: #F6C141;
+  background-color: #fff;
+  border: 1px solid #fff;
+}
 a.login img {
   width: 50px;
   height: 50px;
@@ -146,77 +151,7 @@ i.fas.fa-ellipsis-v.dropdown-toggle:after {
 .ellipsis-v-icon {
   position: relative;
 }
-
-.bg-orange .dropdown-item {
-  padding: .5rem .5rem;
-  border-bottom: 1px solid #eee;
+a.nav-link.active:after { 
+  width: 100%; 
+  left: 0; 
 }
-
-.bg-orange .dropdown-menu {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.bg-orange .dropdown-item:last-child {
-  border-bottom: 0px solid #eee;
-}
-
-.button_white {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #eee;
-  text-align: left;
-}
-
-.bg-orange .dropdown-menu.show {
-  transform: translate3d(0px, 38px, 0px);right: 0;
-}
-.customModel .dropdown-toggle::after{
-  float: right;
-  margin-top: 10px;
-  margin-left: 0px;
-}
-
-.save {
-  color: #fff;
-  background-color: #F6C14C;
-  border-radius: 40px;
-  text-decoration: none;
-  border: 0px;
-  outline: 0px;
-  padding: 8px 20px;
- 
-}
-.save:hover {
-  color: #818181;
-  background-color: #fff;
-  border: 1px solid #818181;
- 
-}
-
-.cancel {
-  color: #818181;
-  background-color: #fff;
-  border-radius: 40px;
-  text-decoration: none;
-  border: 0px;
-  outline: 0px;
-  padding: 8px 20px;
-  border: 1px solid #818181;
- 
-}
-
-.cancel:hover {
-  color: #fff;
-  background-color: #F6C14C;
-  border: 1px solid #fff;
- 
-}
-
-.modal-dialog-slideout {min-height: 100%; margin: 0 0 0 auto;background: #fff;}
-.modal.fade .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(100%,0)scale(1);transform: translate(100%,0)scale(1);}
-.modal.fade.show .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(0,0);transform: translate(0,0);display: flex;align-items: stretch;-webkit-box-align: stretch;height: 100%;}
-.modal.fade.show .modal-dialog.modal-dialog-slideout .modal-body{overflow-y: auto;overflow-x: hidden;}
-.modal-dialog-slideout .modal-content{border: 0;}
-.modal-dialog-slideout .modal-header, .modal-dialog-slideout .modal-footer {height: 69px; display: block;} 
-.modal-dialog-slideout .modal-header h5 {float:left;}
