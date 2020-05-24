@@ -1,8 +1,11 @@
 .top-banner .content {
-    left: 216px;
-    top: 138px;
+    /* left: 216px; */
+    left:15%;
+    right:50%;
+    /* top: 138px; */
+    top:25%;
     border: 0px solid;
-    width: 360px;
+    /* width: 360px; */
 }
 .top-banner .content h2 {
     color: #2b4368;
@@ -44,7 +47,7 @@
     font-weight: 800;
     font-size: 26px;
     padding-top: 25px;
-    padding-bottom: 28px;
+    padding-bottom: 25px;
 }
 
 .how_it_work_container{
@@ -77,9 +80,10 @@
 }
 
 .write_your_container{
-    background-color: #eca837;
+    background:#eca837 url('../../assets/writing_bg.jpg') no-repeat center right;
     position: relative;
     width: 100%;
+    padding:65px 15px;
 }
 
 .write_your_container h5{
@@ -219,4 +223,26 @@ img.author_pic {
 
 .imgbg p {
     padding-bottom: 20px;
+}
+#vmap{
+    width:100%;
+    height:100%
+}
+
+@media(max-width:767.9px){
+    .position-absolute{
+        position: initial !important;
+    }
+    .map_container{
+        min-height: 320px;
+    }
+    .content,.write_your_container{
+        padding-bottom: 30px;
+    }
+    .pl-5.ho{
+        padding-left:15px
+    }
+    .write_your_container{
+        background: #eca837;
+    }
 }

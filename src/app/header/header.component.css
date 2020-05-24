@@ -155,3 +155,51 @@ a.nav-link.active:after {
   width: 100%; 
   left: 0; 
 }
+.spacer{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.navbar.fixed-top{
+  transition: top 1s ease 0s;
+  -webkit-animation: slide-down 0.7s;
+  -moz-animation: slide-down 0.7s;
+  animation: slide-down 0.7s;
+
+}
+@-webkit-keyframes slide-down { 0% { opacity:0; transform:translateY(-100%);}100% { opacity:0.9; transform:translateY(0);}}
+@-moz-keyframes slide-down { 0% { opacity:0; transform:translateY(-100%);}100% { opacity:0.9; transform:translateY(0);}}
+@keyframes slide-down { 0% { opacity:0; transform:translateY(-100%);}100% { opacity:0.9; transform:translateY(0);}}
+
+
+@media (max-width:767.9px){
+  .navbar-collapse{
+    position: fixed;
+    background: rgb(51, 51, 51);
+    z-index: 9;
+    top: 0px;
+    left: 0px;
+    width: 225px;
+    bottom: 0px;
+    transform: translateX(-100%);
+    transition: all 0.3s ease 0s;
+    height:auto
+  }
+  .navbar-collapse.show{
+    transform: translateX(0);
+  }
+  .navbar-collapse.collapsing{
+    transition: all 0.3s;
+  }
+  li.nav-item{
+    text-align: left;
+    padding: 0;
+  }
+  .navbar-dark li.nav-item .nav-link{
+    padding: 10px 20px;
+    display: block;
+  }
+  a.login{
+    display: inline-block;
+    padding: 10px 10px !important;
+  }
+}

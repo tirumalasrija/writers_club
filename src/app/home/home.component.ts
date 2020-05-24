@@ -29,9 +29,12 @@ countrycodes:any=[];
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
        
     }
+
+    
  
 //9945623307
     ngOnInit() {
+
       let self=this;
       let code='';
       
@@ -152,5 +155,6 @@ getCateg()
   );
 	
 }
+
 
 }

@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../_services/authentication.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +8,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  @HostListener('window:scroll', ['$event'])
+    scrollHandler(event) {
+      let number = window.scrollY;
+      let nav = document.querySelector('.navbar ');
+
+      if(number > 100){
+       nav.classList.add('fixed-top');
+
+        //console.log("Scroll Event");
+      }else{
+        nav.classList.remove('fixed-top')
+      }
+    
+    }
+    
 profilepath:string;
   isLoggedIn$: Observable<boolean>;
   logout =false;
+  window:any;
 cuser:any;
   constructor(public authService: AuthenticationService) { }
 
+
+
   ngOnInit() {
+    
+    
+
   //  console.log(this.logout)
     this.isLoggedIn$ = this.authService.isLoggedIn;
     console.log(this.isLoggedIn$.source);

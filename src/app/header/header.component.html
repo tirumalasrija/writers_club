@@ -1,91 +1,92 @@
 
 
 <!--Navbar -->
-
-    <nav *ngIf="!authService.islogged" class="navbar navbar-expand-lg navbar-dark info-color bg-white ml-4 mr-4">
-
-  <a class="navbar-brand" href="#"><img src="/assets/Reg_Bingos_logo.png"/></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
-    aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-    <ul class="d-flex navbar-nav ml-auto">
-  
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/Blog']" [routerLinkActive]="['active']">Blog</a>
-      </li>
-      <li class="nav-item" >
-        <a class="nav-link" [routerLink]="['/storyfeed']" [routerLinkActive]="['active']">Story</a>
-      </li>
-     <!-- <li class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
-        <a class="nav-link" [routerLink]="['/mystories']" [routerLinkActive]="['active']">My Stories</a>
-      </li>
-      <li class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
-        <a class="nav-link" [routerLink]="['/wrtiestory']" [routerLinkActive]="['active']">Write Story</a>
-      </li>
-      <li class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
-        <a class="nav-link" [routerLink]="['/groups']" [routerLinkActive]="['active']">My Groups</a>
-      </li>
-      <li class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
-        <a class="nav-link" [routerLink]="['/myprofile']" [routerLinkActive]="['active']">My Profile</a>
-      </li>
-    -->
-
-      <!----<li class="nav-item">
-        <a class="nav-link" [routerLink]="['/Contact']">Contact</a>
-      </li>
-    -->
+<div class="container" (scroll)="scrollHandler($event)" >
+  <div class="spacer">
+    <nav *ngIf="!authService.islogged" class="navbar navbar-expand-lg navbar-dark info-color bg-white">
+      <a class="navbar-brand" href="#"><img src="/assets/Reg_Bingos_logo.png"/></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+        aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+        <ul class="d-flex navbar-nav ml-auto">
       
-     
-    </ul>
-  </div>
-  <ul class="login_area" >
-    <li class="login_one">
-    <a class="login" [routerLink]="['/login']" [routerLinkActive]="['active']">Login</a>
-    </li>
-    <li class="login_one">
-    <a class="login active" [routerLink]="['/register']" [routerLinkActive]="['active']">Register</a>
-    </li>
-  </ul>
-</nav>
-<!--Navbar -->
-<nav *ngIf="(isLoggedIn$) | async as isLoggedIn" class="mb-1 navbar navbar-expand-lg navbar-dark info-color shadow-sm bg-orange border-bottom ml-4 mr-4">
-  <a class="navbar-brand" href="#"><img src="/assets/Reg_Bingos_logo.png"/></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-5"
-    aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent-5">
-    <ul class="d-flex navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/storyfeed']" [routerLinkActive]="['active']">Story Feed</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/mystories']" [routerLinkActive]="['active']">My Stories</a>
-      </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/Blog']" [routerLinkActive]="['active']">Blog</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" [routerLink]="['/storyfeed']" [routerLinkActive]="['active']">Story</a>
+          </li>
+        <!-- <li class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
+            <a class="nav-link" [routerLink]="['/mystories']" [routerLinkActive]="['active']">My Stories</a>
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
+            <a class="nav-link" [routerLink]="['/wrtiestory']" [routerLinkActive]="['active']">Write Story</a>
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
+            <a class="nav-link" [routerLink]="['/groups']" [routerLinkActive]="['active']">My Groups</a>
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
+            <a class="nav-link" [routerLink]="['/myprofile']" [routerLinkActive]="['active']">My Profile</a>
+          </li>
+        -->
 
-    </ul>
-  </div>
-  <ul class="login_area">
-    <li class="login_one">
-    <a class="login" href="#">All Countries</a>
-    </li>
-    <li class="login_one">
-    <a class="login " [routerLink]="['/wrtiestory']" [routerLinkActive]="['active']">Write a Story</a>
-    </li>
+          <!----<li class="nav-item">
+            <a class="nav-link" [routerLink]="['/Contact']">Contact</a>
+          </li>
+        -->
+          
+          <li class="login_one nav-item">
+          <a class="login" [routerLink]="['/login']" [routerLinkActive]="['active']">Login</a>
+          </li>
+          <li class="login_one nav-item">
+          <a class="login active" [routerLink]="['/register']" [routerLinkActive]="['active']">Register</a>
+          </li>
+        </ul>
+      </div>
     
-  </ul>
-  <div class="user_pic"><a href="#"><img src="{{profilepath}}"/></a></div>
-  <div class="ellipsis-v-icon navbar-nav ml-auto"><a href=""><i class="fas fa-ellipsis-v dropdown-toggle" data-toggle="dropdown"></i>
-    <div class="dropdown-menu dropdown-menu-right">
-      <a class="dropdown-item" [routerLink]="['/myprofile']" [routerLinkActive]="['active']">My Profile</a>
-      <a class="dropdown-item" [routerLink]="['/groups']" [routerLinkActive]="['active']">My Groups</a>
-      <a class="dropdown-item" [routerLink]="['/login']">Log Out</a>
-    </div>
-  </a></div>
-</nav>
+    </nav>
+
+    <!--Navbar -->
+    <nav *ngIf="(isLoggedIn$) | async as isLoggedIn" class="mb-1 navbar navbar-expand-lg navbar-dark info-color shadow-sm bg-orange            border-bottom">
+        <a class="navbar-brand" href="#"><img src="/assets/Reg_Bingos_logo.png"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-5"
+          aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-5">
+          <ul class="d-flex navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/storyfeed']" [routerLinkActive]="['active']">Story Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/mystories']" [routerLinkActive]="['active']">My Stories</a>
+            </li>
+
+          </ul>
+        </div>
+        <ul class="login_area">
+          <li class="login_one">
+          <a class="login" href="#">All Countries</a>
+          </li>
+          <li class="login_one">
+          <a class="login " [routerLink]="['/wrtiestory']" [routerLinkActive]="['active']">Write a Story</a>
+          </li>
+          
+        </ul>
+        <div class="user_pic"><a href="#"><img src="{{profilepath}}"/></a></div>
+        <div class="ellipsis-v-icon navbar-nav ml-auto"><a href=""><i class="fas fa-ellipsis-v dropdown-toggle" data-toggle="dropdown"></i>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" [routerLink]="['/myprofile']" [routerLinkActive]="['active']">My Profile</a>
+            <a class="dropdown-item" [routerLink]="['/groups']" [routerLinkActive]="['active']">My Groups</a>
+            <a class="dropdown-item" [routerLink]="['/login']">Log Out</a>
+          </div>
+        </a></div>
+    </nav>
+  </div>
+</div>
 <!--/.Navbar -->
