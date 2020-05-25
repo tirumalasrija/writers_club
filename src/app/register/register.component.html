@@ -1,124 +1,126 @@
-﻿<div class="continer-fluid">
+﻿<div class="container">
    
-        <div class="d-flex justify-content-around bd-highlight mb-3">
-            <div class="p-2 bd-highlight"><img src="./assets/kids-registration.svg" class="img-fluid"
+        <div class="d-flex justify-content-around mb-3 direction-column">
+            <div class="p-2 bd-highlight col-sm-6 col-12"><img src="./assets/kids-registration.svg" class="img-fluid"
                     alt="Italian Trulli"></div>
-            <div class="col-lg-5 p-2 bd-highlight">
+
+            <div class="col-sm-6 col-md-12 col-12 bd-highlight col-lg-6">
                 
-                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                <div class="d-flex justify-content-center bd-highlight mb-3 logo"><img class="img-fluid"
-                        src="./assets/Reg_Bingos_logo.png" alt="Italian Trulli"></div>
-                <div class="d-flex flex-column">
-                    <h4 class="text-center">Register</h4>
-                    <div class="mt-4 register">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="d-flex justify-content-center mb-3 logo">
+                        <img class="img-fluid" src="./assets/Reg_Bingos_logo.png" alt="Italian Trulli">
+                    </div>
+                    <div class="d-flex flex-column">
+                        <h4 class="text-center">Register</h4>
+                        <div class="mt-4 register">
 
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputName">First Name*</label>
-                                <input type="text" formControlName="name" class="form-control"
-                                    placeholder="Enter First Name *"
-                                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
-                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                                    <div *ngIf="f.name.errors.required">First Name is required</div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputName">First Name*</label>
+                                    <input type="text" formControlName="name" class="form-control"
+                                        placeholder="Enter First Name *"
+                                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                        <div *ngIf="f.name.errors.required">First Name is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputLastname">Last Name*</label>
+
+                                    <input type="text" formControlName="lastname" class="form-control"
+                                        placeholder="Enter Last Name *"
+                                        [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
+                                    <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                                        <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputLastname">Last Name*</label>
 
-                                <input type="text" formControlName="lastname" class="form-control"
-                                    placeholder="Enter Last Name *"
-                                    [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
-                                <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
-                                    <div *ngIf="f.lastname.errors.required">Last Name is required</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputdate">Date of Birth</label>
-                                
-                                <input type="text" formControlName="dob" class="form-control"
-                                    placeholder="Date of Birth *" bsDatepicker
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputdate">Date of Birth</label>
                                     
-                                    [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
-                                <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
-                                    <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
-                                </div>
-                                <span class="fa fa-fw fa-calendar-alt field-icon toggle-password"></span>
-
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputState">Location</label>
-                                <input class="form-control" formControlName="country" ngx-google-places-autocomplete  (onAddressChange)="handleAddressChange($event)"  [ngClass]="{ 'is-invalid': submitted && f.country.errors }"/>
-                                
-                                <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
-                                        <div *ngIf="f.country.errors.required">Address is required</div>
+                                    <input type="text" formControlName="dob" class="form-control"
+                                        placeholder="Date of Birth *" bsDatepicker
+                                        
+                                        [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+                                    <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                                        <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
                                     </div>
-                            </div>
-                        </div>
+                                    <span class="fa fa-fw fa-calendar-alt field-icon toggle-password"></span>
 
-                        <div class="form-group">
-                            <label for="inputEmail4">Email Address</label>
-                            <input type="email" id="inputEmail4" formControlName="email" class="form-control"
-                                placeholder="Enter Email Address *"
-                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                <div *ngIf="f.email.errors.required">Email is required</div>
-                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                            </div>
-
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail4">Mobile Number</label>
-                            <input type="text" id="" formControlName="mobile_number" class="form-control"
-                                placeholder="Enter Mobile Number *"
-                                [ngClass]="{ 'is-invalid': submitted && f.mobile_number.errors }" />
-                            <div *ngIf="submitted && f.mobile_number.errors" class="invalid-feedback">
-                                <div *ngIf="f.mobile_number.errors.required">Mobile Number is required</div>
-                                <div *ngIf="f.mobile_number.errors.minlength">Mobile Number must be at least 10 numbers
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputState">Location</label>
+                                    <input class="form-control" formControlName="country" ngx-google-places-autocomplete  (onAddressChange)="handleAddressChange($event)"  [ngClass]="{ 'is-invalid': submitted && f.country.errors }"/>
+                                    
+                                    <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                                            <div *ngIf="f.country.errors.required">Address is required</div>
+                                        </div>
                                 </div>
                             </div>
 
-                        </div>
+                            <div class="form-group">
+                                <label for="inputEmail4">Email Address</label>
+                                <input type="email" id="inputEmail4" formControlName="email" class="form-control"
+                                    placeholder="Enter Email Address *"
+                                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                </div>
 
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputPassword4">Password</label>
-
-                                <input type="password" formControlName="password" class="form-control"
-                                    placeholder="Enter Password"
-                                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                                    <div *ngIf="f.password.errors.required">Password is required</div>
-                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail4">Mobile Number</label>
+                                <input type="text" id="" formControlName="mobile_number" class="form-control"
+                                    placeholder="Enter Mobile Number *"
+                                    [ngClass]="{ 'is-invalid': submitted && f.mobile_number.errors }" />
+                                <div *ngIf="submitted && f.mobile_number.errors" class="invalid-feedback">
+                                    <div *ngIf="f.mobile_number.errors.required">Mobile Number is required</div>
+                                    <div *ngIf="f.mobile_number.errors.minlength">Mobile Number must be at least 10 numbers
                                     </div>
                                 </div>
-                                <span class="fa fa-fw fa-eye field-icon toggle-password"></span>
 
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputConfirmPassword">Confirm Password</label>
 
-                                <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
-                                <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-                                    <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-                                    <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Password</label>
+
+                                    <input type="password" formControlName="password" class="form-control"
+                                        placeholder="Enter Password"
+                                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Password is required</div>
+                                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                                        </div>
                                     </div>
-                                <span class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                    <span class="fa fa-fw fa-eye field-icon toggle-password"></span>
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputConfirmPassword">Confirm Password</label>
+
+                                    <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                                    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                        <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                                        <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                                        </div>
+                                    <span class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                </div>
                             </div>
+
                         </div>
 
+                        <div class="d-flex justify-content-center bd-highlight mb-2">
+                            <button [disabled]="loading" class="btn btn-custom">Register</button>
+                            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                
+                        </div>
+                        <p class="text-center">Already a member ? <span class="login"><a  [routerLink]="['/login']">Login here.</a></span></p>
                     </div>
-
-                    <div class="d-flex justify-content-center bd-highlight mb-2">
-                        <button [disabled]="loading" class="btn btn-custom">Register</button>
-                        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-              
-                    </div>
-                    <p class="text-center">Already a member ? <span class="login"><a  [routerLink]="['/login']">Login here.</a></span></p>
-                </div>
-            </form>
+                </form>
 
             </div>
 

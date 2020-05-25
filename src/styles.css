@@ -73,6 +73,7 @@ span.forgot_password {
     text-align: center;
     color: #fff;
     margin-top: 4px;
+    cursor: pointer;
 }
 .login_google a {color: #fff;}
 span.forgot_password a {color: #F6C14C;}
@@ -163,8 +164,44 @@ body {
   height: 500px;
 }
 
+body.bg-none{background: none !important;}.bd-highlight{padding-left:10%}
+.spacer{margin-right:-15px;margin-left:-15px}
+
+#screen-shader{display: none !important;}
+
+@media(max-width:991.9px){
+    .direction-column .col-12:first-child,
+    .page-footer .brand{
+        display: none;
+    }    
+  .register .form-group{
+      margin-bottom: 2rem;
+  }
+}
+
+@media(max-width:1199.9px){
+    .logo img{
+        margin-top: 25px;
+    }
+}
+
 @media(max-width:767.9px){
     .heading {
     padding: 15px 0;
     }
+   
+      .direction-column .col-12:first-child,
+      .sortby{
+          display: none;
+      }
+      .bd-highlight{
+          padding-left: 15px;
+      }
+      .page-footer .brand{
+          display: block
+      }
+    
+   
 }
+
+

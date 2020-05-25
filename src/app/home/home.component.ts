@@ -1,11 +1,11 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, Inject } from '@angular/core';
 import { first, count } from 'rxjs/operators';
 import { Cat } from '../_models/cat';
 import { User } from '../_models/user';
 import { AuthenticationService } from '../_services/authentication.service';
 import { CategoriesService } from '../_services/categories.service';
 import { UserService } from '../_services/user.service';
-import { UpperCasePipe } from '@angular/common';
+import { UpperCasePipe, DOCUMENT } from '@angular/common';
 
 
 declare var jQuery: any;
@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
  token:any;
 value:any;
 countrycodes:any=[];
-    constructor(private userService: UserService,private category: CategoriesService,private authService: AuthenticationService,
+    constructor(private userService: UserService,private category: CategoriesService,private authService: AuthenticationService
+     
     
       ) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -34,7 +35,7 @@ countrycodes:any=[];
  
 //9945623307
     ngOnInit() {
-
+      
       let self=this;
       let code='';
       

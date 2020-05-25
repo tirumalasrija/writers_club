@@ -1,14 +1,16 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit,Inject, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Cat } from '../_models/cat';
+import {DOCUMENT} from '@angular/common'
 
 import { CategoriesService } from '../_services/categories.service';
 import { AlertService, UserService } from '../_services';
 import { MustMatch } from "../_helpers/must-match.validator";
+import { inject } from '@angular/core/testing';
 @Component({templateUrl: 'register.component.html'})
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit,OnDestroy {
     registerForm: FormGroup;
     loading = false;
     submitted = false;
@@ -23,10 +25,11 @@ users: any[] =[];
         private router: Router,
         private userService: UserService,
         private alertService: AlertService,
-        private category: CategoriesService) { }
+        private category: CategoriesService, @Inject(DOCUMENT) private document: Document) { }
 
     ngOnInit() {
-       
+        const body = this.document.body;
+        body.classList.add('bg-none');
         this.registerForm = this.formBuilder.group({
          name: ['', Validators.required],
          lastname: ['', Validators.required],
@@ -106,5 +109,9 @@ console.log(this.registerForm.value);
                 });
             });
 
+    }
+    ngOnDestroy(){
+        const body = this.document.body;
+        body.classList.remove('bg-none');
     }
 }

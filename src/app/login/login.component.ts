@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
@@ -12,8 +12,13 @@ import {
     FacebookLoginProvider,
     GoogleLoginProvider
 } from 'angular-6-social-login';
-@Component({templateUrl: 'login.component.html'})
-export class LoginComponent implements OnInit {
+import { DOCUMENT } from '@angular/common';
+@Component({
+    selector: 'login',
+    templateUrl: 'login.component.html'
+ 
+})
+export class LoginComponent implements OnInit,OnDestroy {
     loginForm: FormGroup;
     loading = false;
     submitted = false;
@@ -27,11 +32,15 @@ export class LoginComponent implements OnInit {
         private socialAuthService: AuthService,
         private router: Router,
         private authenticationService: AuthenticationService,private category: CategoriesService,
-        private alertService: AlertService) {}
+        private alertService: AlertService,
+        @Inject(DOCUMENT) private document: Document) {
+
+        }
         cats: Cat[]=[] ; 
         token:any;
         islogged : boolean;
     ngOnInit() {
+        this.document.body.classList.add('bg-none');
       //  this.getCateg();
         this.loginForm = this.formBuilder.group({
             email: ['', Validators.required],
@@ -120,4 +129,8 @@ export class LoginComponent implements OnInit {
       });
     });
 }
+
+    ngOnDestroy(){
+        this.document.body.classList.remove('bg-none');
+    }
 }
